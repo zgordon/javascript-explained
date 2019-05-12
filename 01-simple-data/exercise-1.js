@@ -3,4 +3,4 @@
  * changed and assign it a value of "JavaScript Explained"
  */
 
-const siteName = "JavaScript Explained";
+const siteName = `JavaScript Explained`;
