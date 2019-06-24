@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exercise 27 - Reusable Code - JavaScript Explained</title>
+  </head>
+  <body>
+    <h1>Reusable Code Exercises</h1>
+    <p>Open the web inspector console to test.</p>
+  </body>
+  <script>
+    function getArticleMarkup(title, url, excerpt, author) {
+      let markup = getHeaderLinkMarkup(title, url);
+      markup += getExcerptMarkup(excerpt);
+      markup += getAuthorMarkup(author);
+      return markup;
+    }
+    console.log(
+      getArticleMarkup(
+        `JavaScript Explained`,
+        `https://javascriptexplained.com`,
+        `A practical guide to getting up and running with JavaScript quickly and easily.`,
+        `Zac Gordon`
+      )
+    );
+    function getExcerptMarkup(excerpt) {
+      return `<div class="excerpt"><p>${excerpt}</p></div>`;
+    }
+    function getAuthorMarkup(author) {
+      return `<p>By: ${author}</p>`;
+    }
+    function getHeaderLinkMarkup(title, url) {
+      const link = getMyLinkMarkup(title, url);
+      const header = getMyHeaderMarkup(link);
+      return header;
+    }
+    function getMyLinkMarkup(title, url) {
+      return `<a href="${url}">${title}</a>`;
+    }
+    function getMyHeaderMarkup(title) {
+      return `<h1>${title}</h1>`;
+    }
+  </script>
+</html>
