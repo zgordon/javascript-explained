@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exercise 5 - Complex Data - JavaScript Explained</title>
+  </head>
+  <body>
+    <h1>Complex Data Exercises</h1>
+    <p>Open the web inspector console to test.</p>
+  </body>
+  <script>
+    const user = {
+      id: 1,
+      username: `yourusername`,
+      loggedIn: true,
+      sayHiWithThis: function() {
+        if (this.loggedIn == true) {
+          console.log(`Hi ${this.username}!`);
+        } else {
+          console.log(`Please login!`);
+        }
+      }
+    };
+    user.sayHiWithThis();
+  </script>
+</html>

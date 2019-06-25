@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exercise 13 - Complex Data - JavaScript Explained</title>
+  </head>
+  <body>
+    <h1>Complex Data Exercises</h1>
+    <p>Open the web inspector console to test.</p>
+  </body>
+  <script>
+    function getMessageMarkup(type) {
+      const message = {
+        notice: `This is a notice.`,
+        error: `An error occured!`,
+        success: `Success!`
+      };
+      let markup = `<div class="message ${type}">`;
+      markup += message[type];
+      markup += `</div>`;
+      return markup;
+    }
+    console.log(getMessageMarkup(`notice`));
+  </script>
+</html>
