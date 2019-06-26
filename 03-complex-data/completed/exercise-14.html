@@ -11,28 +11,7 @@
     <p>Open the web inspector console to test.</p>
   </body>
   <script>
-    function init() {
-      const loggedIn = getLogin();
-      if (loggedIn) {
-        const name = askFullName();
-        alert(`Welcome ${name}!`);
-      }
-    }
-    init();
-    function getLogin() {
-      const password = prompt(`Please enter password`);
-      if (password === `password`) {
-        alert(`Thank you! You are Logged In!`);
-        return true;
-      } else {
-        alert(`Incorrect, please try again!`);
-        return false;
-      }
-    }
-    function askFullName() {
-      const first = prompt(`Please enter your first name`);
-      const last = prompt(`Please enter your first name`);
-      return `${first} ${last}`;
-    }
+    const postIds = [1, 13, 44, 17, 22, 19, 11];
+    console.log(postIds);
   </script>
 </html>
