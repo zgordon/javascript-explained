@@ -42,7 +42,9 @@
       }
     ];
     const jsArticles = posts.filter(post => post.cats.includes(`js`));
-    const nonJSArticles = posts.filter(post => !post.cats.includes(`js`));
+
+    // Place your code below this line, before the closing script tag
+
     function getPostMarkup(posts) {
       let markup = `<div class="posts">`;
       posts.map(post => {
@@ -54,6 +56,5 @@
       markup += `</div>`;
       return markup;
     }
-    console.log(getPostMarkup(nonJSArticles));
   </script>
 </html>

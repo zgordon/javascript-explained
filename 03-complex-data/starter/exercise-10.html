@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exercise 10 - Complex Data - JavaScript Explained</title>
+  </head>
+  <body>
+    <h1>Complex Data Exercises</h1>
+    <p>Open the web inspector console to test.</p>
+  </body>
+  <script>
+    const post = {
+      id: 1,
+      title: `JavaScript Explained`,
+      url: `https://javascriptexplained.com/`,
+      excerpt: `Lorem ipsum excerpt.`
+    };
+
+    // Place your code below this line, before the closing script tag
+
+    function getExcerptMarkup(post) {
+      let markup = `<div class="excerpt>`;
+      markup += `<p>${post.excerpt}</p>`;
+      markup += `</div>`;
+      return markup;
+    }
+    function getHeaderMarkup(post) {
+      let markup = `<h1>`;
+      markup += `<a href="${post.url}">`;
+      markup += post.title;
+      markup += `</a></h1>`;
+      return markup;
+    }
+  </script>
+</html>

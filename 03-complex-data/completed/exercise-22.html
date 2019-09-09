@@ -11,36 +11,8 @@
     <p>Open the web inspector console to test.</p>
   </body>
   <script>
-    function getArticleMarkup(title, url, excerpt, author) {
-      let markup = getHeaderLinkMarkup(title, url);
-      markup += getExcerptMarkup(excerpt);
-      markup += getAuthorMarkup(author);
-      return markup;
-    }
-    console.log(
-      getArticleMarkup(
-        `JavaScript Explained`,
-        `https://javascriptexplained.com`,
-        `A practical guide to getting up and running with JavaScript quickly and easily.`,
-        `Zac Gordon`
-      )
-    );
-    function getExcerptMarkup(excerpt) {
-      return `<div class="excerpt"><p>${excerpt}</p></div>`;
-    }
-    function getAuthorMarkup(author) {
-      return `<p>By: ${author}</p>`;
-    }
-    function getHeaderLinkMarkup(title, url) {
-      const link = getMyLinkMarkup(title, url);
-      const header = getMyHeaderMarkup(link);
-      return header;
-    }
-    function getMyLinkMarkup(title, url) {
-      return `<a href="${url}">${title}</a>`;
-    }
-    function getMyHeaderMarkup(title) {
-      return `<h1>${title}</h1>`;
-    }
+    const numbers = [17, 11, 4, 100, 12, 8, 6, 14, 11];
+    console.log(numbers.sort((a, b) => a - b));
+    console.log(numbers.sort((a, b) => b - a));
   </script>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Exercise 27 - Complex Data - JavaScript Explained</title>
+    <title>Exercise 26 - Complex Data - JavaScript Explained</title>
   </head>
   <body>
     <h1>Complex Data Exercises</h1>
@@ -32,13 +32,6 @@
         cats: [`js`],
         url: `using-a-code-editor`,
         excerpt: `A tutorial on the basics`
-      },
-      {
-        id: 4,
-        title: `More JS Practice`,
-        cats: [`js`, `practice`],
-        url: `more-js-practice`,
-        excerpt: `Practice, practice, practice`
       }
     ];
     const jsArticles = posts.filter(post => post.cats.includes(`js`));
@@ -54,6 +47,5 @@
       markup += `</div>`;
       return markup;
     }
-    console.log(getPostMarkup(nonJSArticles));
   </script>
 </html>

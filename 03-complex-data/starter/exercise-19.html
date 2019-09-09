@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Exercise 20 - Complex Data - JavaScript Explained</title>
+    <title>Exercise 19 - Complex Data - JavaScript Explained</title>
   </head>
   <body>
     <h1>Complex Data Exercises</h1>
@@ -31,17 +31,6 @@
         excerpt: `Keeping it going.`
       }
     ];
-    function getPostMarkup(posts) {
-      let markup = `<div class="posts">`;
-      posts.map(post => {
-        markup += `<article class="post-${post.id}">`;
-        markup += `<h2>${post.title}</h2>`;
-        markup += `<p>${post.excerpt}</p>`;
-        markup += `</article>`;
-      });
-      markup += `</div>`;
-      return markup;
-    }
-    console.log(getPostMarkup(posts));
+    // Place your code below this line, before the closing script tag
   </script>
 </html>
