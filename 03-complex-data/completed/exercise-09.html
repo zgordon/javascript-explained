@@ -11,11 +11,12 @@
     <p>Open the web inspector console to test.</p>
   </body>
   <script>
-    function askFullName() {
-      const first = prompt(`Please enter your first name`);
-      const last = prompt(`Please enter your first name`);
-      return `${first} ${last}`;
-    }
-    console.log(askFullName());
+    const post = {
+      id: 1,
+      title: `JavaScript Explained`,
+      url: `https://javascriptexplained.com/`,
+      excerpt: `Lorem ipsum excerpt.`
+    };
+    console.log(post);
   </script>
 </html>

@@ -11,9 +11,17 @@
     <p>Open the web inspector console to test.</p>
   </body>
   <script>
-    function getFullName(first, last) {
-      return `${first} ${last}`;
+    const post = {
+      title: `JavaScript Explained`,
+      url: `https://javascriptexplained.com/`
+    };
+    function getHeaderMarkup(post) {
+      let markup = `<h1>`;
+      markup += `<a href="${post.url}">`;
+      markup += post.title;
+      markup += `</a></h1>`;
+      return markup;
     }
-    console.log(getFullName(`Zac`, `Gordon`));
+    console.log(getHeaderMarkup(post));
   </script>
 </html>

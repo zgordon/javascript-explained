@@ -11,11 +11,29 @@
     <p>Open the web inspector console to test.</p>
   </body>
   <script>
-    function getMyLinkMarkup(title, url) {
-      return `<a href="${url}">${title}</a>`;
+    const posts = [
+      {
+        id: 1,
+        title: `First Post`,
+        slug: `first-post`,
+        excerpt: `Let's get this started!`
+      },
+      {
+        id: 2,
+        title: `Second Post`,
+        slug: `second-post`,
+        excerpt: `On a roll..`
+      },
+      {
+        id: 1,
+        title: `Third Post`,
+        slug: `third-post`,
+        excerpt: `Keeping it going.`
+      }
+    ];
+    function logTitles(posts) {
+      posts.map(post => console.log(post.title));
     }
-    console.log(
-      getMyLinkMarkup(`JavaScript Explained`, `https://javascriptexplained.com`)
-    );
+    logTitles(posts);
   </script>
 </html>

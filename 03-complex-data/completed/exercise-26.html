@@ -11,11 +11,49 @@
     <p>Open the web inspector console to test.</p>
   </body>
   <script>
-    function getTaxes(price) {
-      const tax = 0.05;
-      const total = price + price * tax;
-      return total;
+    const posts = [
+      {
+        id: 1,
+        title: `Welcome to JS`,
+        cats: [`js`, `intro`],
+        url: `welcome-to-js`,
+        excerpt: `An introduction`
+      },
+      {
+        id: 2,
+        title: `Using a Code Editor`,
+        cats: [`tools`, `intro`],
+        url: `using-a-code-editor`,
+        excerpt: `A tutorial on the basics`
+      },
+      {
+        id: 3,
+        title: `JavaScript Arrays`,
+        cats: [`js`],
+        url: `using-a-code-editor`,
+        excerpt: `A tutorial on the basics`
+      },
+      {
+        id: 4,
+        title: `More JS Practice`,
+        cats: [`js`, `practice`],
+        url: `more-js-practice`,
+        excerpt: `Practice, practice, practice`
+      }
+    ];
+    const jsArticles = posts.filter(post => post.cats.includes(`js`));
+    const nonJSArticles = posts.filter(post => !post.cats.includes(`js`));
+    function getPostMarkup(posts) {
+      let markup = `<div class="posts">`;
+      posts.map(post => {
+        markup += `<article class="post-${post.id}">`;
+        markup += `<h2>${post.title}</h2>`;
+        markup += `<p>${post.excerpt}</p>`;
+        markup += `</article>`;
+      });
+      markup += `</div>`;
+      return markup;
     }
-    console.log(getTaxes(100));
+    console.log(getPostMarkup(jsArticles));
   </script>
 </html>

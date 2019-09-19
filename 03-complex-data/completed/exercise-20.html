@@ -11,9 +11,37 @@
     <p>Open the web inspector console to test.</p>
   </body>
   <script>
-    function getExcerptMarkup(excerpt) {
-      return `<div class="excerpt"><p>${excerpt}</p></div>`;
+    const posts = [
+      {
+        id: 1,
+        title: `First Post`,
+        slug: `first-post`,
+        excerpt: `Let's get this started!`
+      },
+      {
+        id: 2,
+        title: `Second Post`,
+        slug: `second-post`,
+        excerpt: `On a roll..`
+      },
+      {
+        id: 1,
+        title: `Third Post`,
+        slug: `third-post`,
+        excerpt: `Keeping it going.`
+      }
+    ];
+    function getPostMarkup(posts) {
+      let markup = `<div class="posts">`;
+      posts.map(post => {
+        markup += `<article class="post-${post.id}">`;
+        markup += `<h2>${post.title}</h2>`;
+        markup += `<p>${post.excerpt}</p>`;
+        markup += `</article>`;
+      });
+      markup += `</div>`;
+      return markup;
     }
-    console.log(getExcerptMarkup(`Lorem to the ipsum.`));
+    console.log(getPostMarkup(posts));
   </script>
 </html>

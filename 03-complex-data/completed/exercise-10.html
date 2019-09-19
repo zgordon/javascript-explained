@@ -11,12 +11,32 @@
     <p>Open the web inspector console to test.</p>
   </body>
   <script>
-    function askFullName() {
-      const first = prompt(`Please enter your first name`);
-      const last = prompt(`Please enter your first name`);
-      return `${first} ${last}`;
+    const post = {
+      id: 1,
+      title: `JavaScript Explained`,
+      url: `https://javascriptexplained.com/`,
+      excerpt: `Lorem ipsum excerpt.`
+    };
+    function getPostMarkup(post) {
+      let markup = `<article id="${post.id}">`;
+      markup += getHeaderMarkup(post);
+      markup += getExcerptMarkup(post);
+      markup += `</article>`;
+      return markup;
     }
-    const userFullName = askFullName();
-    console.log(userFullName);
+    console.log(getPostMarkup(post));
+    function getExcerptMarkup(post) {
+      let markup = `<div class="excerpt>`;
+      markup += `<p>${post.excerpt}</p>`;
+      markup += `</div>`;
+      return markup;
+    }
+    function getHeaderMarkup(post) {
+      let markup = `<h1>`;
+      markup += `<a href="${post.url}">`;
+      markup += post.title;
+      markup += `</a></h1>`;
+      return markup;
+    }
   </script>
 </html>

@@ -11,10 +11,17 @@
     <p>Open the web inspector console to test.</p>
   </body>
   <script>
-    function getFullName(first, last) {
-      return `${first} ${last}`;
+    const post = {
+      title: `JavaScript Explained`,
+      url: `https://javascriptexplained.com/`,
+      excerpt: `Lorem ipsum excerpt.`
+    };
+    function getExcerptMarkup(post) {
+      let markup = `<div class="excerpt>`;
+      markup += `<p>${post.excerpt}</p>`;
+      markup += `</div>`;
+      return markup;
     }
-    const fullName = getFullName(`Zac`, `Gordon`);
-    console.log(fullName);
+    console.log(getExcerptMarkup(post));
   </script>
 </html>

@@ -11,20 +11,17 @@
     <p>Open the web inspector console to test.</p>
   </body>
   <script>
-    function init() {
-      const loggedIn = getLogin();
-      console.log(loggedIn);
+    function getMessageMarkup(type) {
+      const message = {
+        notice: `This is a notice.`,
+        error: `An error occured!`,
+        success: `Success!`
+      };
+      let markup = `<div class="message ${type}">`;
+      markup += message[type];
+      markup += `</div>`;
+      return markup;
     }
-    init();
-    function getLogin() {
-      const password = prompt(`Please enter password`);
-      if (password === `password`) {
-        alert(`Thank you! You are Logged In!`);
-        return true;
-      } else {
-        alert(`Incorrect, please try again!`);
-        return false;
-      }
-    }
+    console.log(getMessageMarkup(`error`));
   </script>
 </html>
