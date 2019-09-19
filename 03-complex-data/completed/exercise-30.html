@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exercise 27 - Complex Data - JavaScript Explained</title>
+  </head>
+  <body>
+    <h1>Complex Data Exercises</h1>
+    <p>Open the web inspector console to test.</p>
+  </body>
+  <script>
+    const getArticleMarkup = (title, url, excerpt, author) => {
+      let markup = getHeaderLinkMarkup(title, url);
+      markup += getExcerptMarkup(excerpt);
+      markup += getAuthorMarkup(author);
+      return markup;
+    };
+    console.log(
+      getArticleMarkup(
+        `JavaScript Explained`,
+        `https://javascriptexplained.com`,
+        `A practical guide to getting up and running with JavaScript quickly and easily.`,
+        `Zac Gordon`
+      )
+    );
+    const getExcerptMarkup = excerpt =>
+      `<div class="excerpt"><p>${excerpt}</p></div>`;
+    const getAuthorMarkup = author => `<p>By: ${author}</p>`;
+    const getHeaderLinkMarkup = (title, url) => {
+      const link = getMyLinkMarkup(title, url);
+      const header = getMyHeaderMarkup(link);
+      return header;
+    };
+    const getMyLinkMarkup = (title, url) => `<a href="${url}">${title}</a>`;
+    const getMyHeaderMarkup = title => `<h1>${title}</h1>`;
+  </script>
+</html>
