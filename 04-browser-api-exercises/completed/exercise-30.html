@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exercise 27 - The Browser API - JavaScript Explained</title>
+  </head>
+  <body>
+    <h1>The Browser API Exercises</h1>
+    <p>Open the web inspector console to test.</p>
+  </body>
+  <script>
+    const dataset = [
+      { id: 1820, value: 491800 },
+      { id: 4310, value: 430110 },
+      { id: 3980, value: 657010 },
+      { id: 5573, value: 801430 },
+      { id: 2010, value: 313001 }
+    ];
+    const values = dataset.map(data => data.value);
+    const min = Math.min(...values);
+    const max = Math.max(...values);
+    const sum = values.reduce((a, b) => (b += a));
+    const average = sum / values.length;
+    const total = sum.toFixed(2);
+    console.log(min, max, average, total);
+  </script>
+</html>
