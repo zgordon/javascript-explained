@@ -6,54 +6,47 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Exercise 27 - The Browser API - JavaScript Explained</title>
   </head>
+  <style>
+    .overlay {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      background: #22222280;
+    }
+    .modal {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      min-width: 400px;
+      padding: 2rem;
+    }
+    .modal .close-modal {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+  </style>
   <body>
-    <h1>The Browser API Exercises</h1>
-    <p>Open the web inspector console to test.</p>
+    <div id="container">
+      <h1>The Browser API Exercises</h1>
+      <p>Open the <a href="#">web inspector</a> console to test.</p>
+      <p><button class="open-modal">Open Modal</button></p>
+    </div>
   </body>
   <script>
-    const posts = [
-      {
-        id: 1,
-        title: `Welcome to JS`,
-        cats: [`js`, `intro`],
-        url: `welcome-to-js`,
-        excerpt: `An introduction`
-      },
-      {
-        id: 2,
-        title: `Using a Code Editor`,
-        cats: [`tools`, `intro`],
-        url: `using-a-code-editor`,
-        excerpt: `A tutorial on the basics`
-      },
-      {
-        id: 3,
-        title: `JavaScript Arrays`,
-        cats: [`js`],
-        url: `using-a-code-editor`,
-        excerpt: `A tutorial on the basics`
-      },
-      {
-        id: 4,
-        title: `More JS Practice`,
-        cats: [`js`, `practice`],
-        url: `more-js-practice`,
-        excerpt: `Practice, practice, practice`
-      }
-    ];
-    const jsArticles = posts.filter(post => post.cats.includes(`js`));
-    const nonJSArticles = posts.filter(post => !post.cats.includes(`js`));
-    function getPostMarkup(posts) {
-      let markup = `<div class="posts">`;
-      posts.map(post => {
-        markup += `<article class="post-${post.id}">`;
-        markup += `<h2>${post.title}</h2>`;
-        markup += `<p>${post.excerpt}</p>`;
-        markup += `</article>`;
-      });
-      markup += `</div>`;
-      return markup;
-    }
-    console.log(getPostMarkup(nonJSArticles));
+    const modal = () => `
+      <div class="overlay">
+        <div class="modal">
+          <button class="close-modal">
+            Close
+          </button>
+          <h1>My Modal!</h1>
+        </div>
+      </div>
+    `;
   </script>
 </html>

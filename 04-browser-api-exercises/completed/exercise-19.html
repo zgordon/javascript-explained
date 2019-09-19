@@ -7,38 +7,27 @@
     <title>Exercise 19 - The Browser API - JavaScript Explained</title>
   </head>
   <body>
-    <h1>The Browser API Exercises</h1>
-    <p>Open the web inspector console to test.</p>
+    <div id="container">
+      <h1><a href="#">The Browser API Exercises</a></h1>
+      <p>Open the <a href="#">web inspector</a> console to test.</p>
+      <ul>
+        <li><a href="#link-1">Link 1</a></li>
+        <li><a href="#link-2">Link 2</a></li>
+        <li><a href="#link-3">Link 3</a></li>
+      </ul>
+    </div>
   </body>
   <script>
-    const posts = [
-      {
-        id: 1,
-        title: `First Post`,
-        slug: `first-post`,
-        excerpt: `Let's get this started!`
-      },
-      {
-        id: 2,
-        title: `Second Post`,
-        slug: `second-post`,
-        excerpt: `On a roll..`
-      },
-      {
-        id: 1,
-        title: `Third Post`,
-        slug: `third-post`,
-        excerpt: `Keeping it going.`
-      }
-    ];
-    function getTitlesMarkup(posts) {
-      let markup = `<ul>`;
-      posts.map(post => {
-        markup += `<li><h2><a href="/${post.slug}">${post.title}</a></li>`;
-      });
-      markup += `</ul>`;
-      return markup;
+    const links = document.querySelectorAll(`a`);
+    const linksArray = Array.from(links);
+
+    function logTitle(e) {
+      e.preventDefault();
+      console.log(this.innerText);
     }
-    console.log(getTitlesMarkup(posts));
+
+    linksArray.map(link => {
+      link.addEventListener(`click`, logTitle);
+    });
   </script>
 </html>

@@ -9,21 +9,34 @@
   <body>
     <h1>The Browser API Exercises</h1>
     <p>Open the web inspector console to test.</p>
+    <div class="video-player">
+      <video controls>
+        <source
+          src="https://dzwonsemrish7.cloudfront.net/items/3C350y3F3e47332u1x1T/demo-video.mp4"
+          type="video/mp4"
+        />
+        Sorry, your browser doesn't support embedded videos :(
+      </video>
+      <p>
+        <input id="play" type="submit" value="Play" />
+        <input id="pause" type="submit" value="Pause" />
+      </p>
+    </div>
   </body>
   <script>
-    const dataset = [
-      { id: 1820, value: 491800 },
-      { id: 4310, value: 430110 },
-      { id: 3980, value: 657010 },
-      { id: 5573, value: 801430 },
-      { id: 2010, value: 313001 }
-    ];
-    const values = dataset.map(data => data.value);
-    const min = Math.min(...values);
-    const max = Math.max(...values);
-    const sum = values.reduce((a, b) => (b += a));
-    const average = sum / values.length;
-    const total = sum.toFixed(2);
-    console.log(min, max, average, total);
+    const video = document.querySelector(`video`);
+    const playButton = document.querySelector(`#play`);
+    const pauseButton = document.querySelector(`#pause`);
+
+    function playVideo(e) {
+      video.play();
+    }
+
+    function pauseVideo(e) {
+      video.pause();
+    }
+
+    playButton.addEventListener(`click`, playVideo);
+    pauseButton.addEventListener(`click`, pauseVideo);
   </script>
 </html>

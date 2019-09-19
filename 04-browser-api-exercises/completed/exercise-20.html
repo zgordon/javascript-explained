@@ -7,41 +7,23 @@
     <title>Exercise 20 - The Browser API - JavaScript Explained</title>
   </head>
   <body>
-    <h1>The Browser API Exercises</h1>
-    <p>Open the web inspector console to test.</p>
+    <div id="container">
+      <h1><a href="#">The Browser API Exercises</a></h1>
+      <p>Open the <a href="#">web inspector</a> console to test.</p>
+      <ul>
+        <li><a href="#link-1">Link 1</a></li>
+        <li><a href="#link-2">Link 2</a></li>
+        <li><a href="#link-3">Link 3</a></li>
+      </ul>
+    </div>
   </body>
   <script>
-    const posts = [
-      {
-        id: 1,
-        title: `First Post`,
-        slug: `first-post`,
-        excerpt: `Let's get this started!`
-      },
-      {
-        id: 2,
-        title: `Second Post`,
-        slug: `second-post`,
-        excerpt: `On a roll..`
-      },
-      {
-        id: 1,
-        title: `Third Post`,
-        slug: `third-post`,
-        excerpt: `Keeping it going.`
-      }
-    ];
-    function getPostMarkup(posts) {
-      let markup = `<div class="posts">`;
-      posts.map(post => {
-        markup += `<article class="post-${post.id}">`;
-        markup += `<h2>${post.title}</h2>`;
-        markup += `<p>${post.excerpt}</p>`;
-        markup += `</article>`;
-      });
-      markup += `</div>`;
-      return markup;
+    const links = document.querySelectorAll(`a`);
+    const linksArray = Array.from(links);
+
+    function logLink(e) {
+      e.preventDefault();
+      console.log(this.href);
     }
-    console.log(getPostMarkup(posts));
   </script>
 </html>

@@ -11,23 +11,18 @@
       <h1><a href="#">The Browser API Exercises</a></h1>
       <p>Open the <a href="#">web inspector</a> console to test.</p>
       <ul>
-        <li><a href="#">Link 1</a></li>
-        <li><a href="#">Link 2</a></li>
-        <li><a href="#">Link 3</a></li>
+        <li><a href="#link-1">Link 1</a></li>
+        <li><a href="#link-2">Link 2</a></li>
+        <li><a href="#link-3">Link 3</a></li>
       </ul>
     </div>
   </body>
   <script>
-    const links = document.querySelectorAll(`a`);
     const linksArray = Array.from(links);
 
-    function logLink(e) {
+    function logTitle(e) {
       e.preventDefault();
       console.log(this.innerText);
     }
-
-    linksArray.map(link => {
-      link.addEventListener(`click`, logLink);
-    });
   </script>
 </html>
