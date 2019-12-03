@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exercise 9 - The Fetch API - JavaScript Explained</title>
+  </head>
+  <body>
+    <div id="container">
+      <h1><a href="#">The Fetch API Exercises</a></h1>
+      <p>Open the <a href="#">web inspector</a> console to test.</p>
+    </div>
+  </body>
+  <script>
+    async function init() {
+      const data = await getRandomDogPhoto();
+      console.log(data);
+    }
+    init();
+
+    function getRandomDogPhoto() {
+      const url = `https://dog.ceo/api/breeds/image/random`;
+      return fetch(url)
+        .then(response => response.json())
+        .catch(error => console.error(error));
+    }
+  </script>
+</html>
