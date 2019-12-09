@@ -1,0 +1,12 @@
+composer.lock
+/node_modules/
+/vendor/
+/logs/
+/reports/
+node_modules/
+.vscode
+.vscode/
+.netlify/
+.netlify
+.DS_Store
+.DS_Store?
