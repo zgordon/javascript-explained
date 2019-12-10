@@ -14,17 +14,5 @@
   </body>
   <script>
     const url = `https://dev-js-explained-api.pantheonsite.io/wp-json/wp/v2/posts`;
-
-    async function init() {
-      const posts = await fetchPosts();
-      console.log(posts);
-    }
-    init();
-
-    function fetchPosts() {
-      return fetch(url)
-        .then(res => res.json())
-        .catch(error => console.error(error));
-    }
   </script>
 </html>

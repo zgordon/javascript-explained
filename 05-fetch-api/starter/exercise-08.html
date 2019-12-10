@@ -13,17 +13,6 @@
     </div>
   </body>
   <script>
-    async function init() {
-      const data = await getRandomDogPhoto();
-      console.log(data);
-    }
-    init();
-
-    function getRandomDogPhoto() {
-      const url = `https://dog.ceo/api/breeds/image/random`;
-      return fetch(url)
-        .then(response => response.json())
-        .catch(error => console.error(error));
-    }
+    // Place code below here
   </script>
 </html>

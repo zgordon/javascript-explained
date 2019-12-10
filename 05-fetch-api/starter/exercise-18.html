@@ -21,21 +21,13 @@
   <script>
     async function init() {
       const base = `EUR`;
-      loadBase(base);
       const exchange = await getRates(base);
       loadDropDown(exchange.rates);
     }
     init();
 
-    function loadBase(base) {
-      const container = document.querySelector(`.base`);
-      container.innerHTML = base;
-    }
-
     function logRate() {
-      const container = document.querySelector(`.rate`);
-      const rate = parseFloat(this.value).toFixed(2);
-      container.innerHTML = rate;
+      console.log(parseFloat(this.value).toFixed(2));
     }
 
     function getRates(base) {

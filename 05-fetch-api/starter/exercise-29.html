@@ -19,7 +19,7 @@
 
     async function init() {
       posts = await fetchPosts();
-      displayPosts();
+      console.log(posts);
     }
     init();
 
@@ -27,15 +27,6 @@
       return fetch(url)
         .then(res => res.json())
         .catch(error => console.error(error));
-    }
-
-    function displayPosts() {
-      let markup = `<ul>`;
-      posts.forEach(post => {
-        markup += `<li><a href="#" data-id="${post.id}">${post.title.rendered}</a></li>`;
-      });
-      markup += `</ul>`;
-      results.innerHTML = markup;
     }
   </script>
 </html>

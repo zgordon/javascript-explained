@@ -14,9 +14,7 @@
   </body>
   <script>
     async function init() {
-      loadSpinner();
       const data = await getRandomDogPhoto();
-      removeSpinner();
       renderDogPhoto(data.message);
     }
     init();

@@ -29,6 +29,7 @@
 
     function loadDropDown(rates) {
       let markup = `<select id="rates">`;
+      markup += `<option value="1">Choose Currency</option>`;
       for (let rate in rates) {
         markup += `<option value="${rates[rate]}">${rate}</option>`;
       }

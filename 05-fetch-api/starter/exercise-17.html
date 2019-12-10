@@ -14,18 +14,17 @@
   </body>
   <script>
     async function init() {
-      const base = `EUR`;
-      const exchange = await getRates(base);
+      const exchange = await getRates();
       loadDropDown(exchange.rates);
     }
     init();
 
     function logRate() {
-      console.log(this.value);
+      console.log(parseFloat(this.value).toFixed(2));
     }
 
-    function getRates(base) {
-      return fetch(`https://api.exchangeratesapi.io/latest?base=${base}`)
+    function getRates() {
+      return fetch(`https://api.exchangeratesapi.io/latest`)
         .then(response => response.json())
         .catch(error => console.error(error));
     }
@@ -35,11 +34,9 @@
 
       let markup = `<select id="rates">`;
       markup += `<option value="1">Choose Currency</option>`;
-
       for (let rate in rates) {
         markup += `<option value="${rates[rate]}">${rate}</option>`;
       }
-
       markup += `</select>`;
 
       container.insertAdjacentHTML(`beforeend`, markup);

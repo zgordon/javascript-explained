@@ -13,16 +13,6 @@
     </div>
   </body>
   <script>
-    async function init() {
-      const exchange = await getRates();
-      console.log(exchange);
-    }
-    init();
-
-    function getRates() {
-      return fetch(`https://api.exchangeratesapi.io/latest`)
-        .then(response => response.json())
-        .catch(error => console.error(error));
-    }
+    // Place code below here
   </script>
 </html>

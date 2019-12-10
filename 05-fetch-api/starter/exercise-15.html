@@ -17,7 +17,6 @@
 
     async function init() {
       const exchange = await getRates();
-      loadDropDown(exchange.rates);
     }
     init();
 
@@ -25,15 +24,6 @@
       return fetch(`https://api.exchangeratesapi.io/latest`)
         .then(response => response.json())
         .catch(error => console.error(error));
-    }
-
-    function loadDropDown(rates) {
-      let markup = `<select id="rates">`;
-      for (let rate in rates) {
-        markup += `<option value="${rates[rate]}">${rate}</option>`;
-      }
-      markup += `</select>`;
-      container.insertAdjacentHTML(`beforeend`, markup);
     }
   </script>
 </html>

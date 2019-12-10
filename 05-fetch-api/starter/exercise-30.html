@@ -37,34 +37,6 @@
       });
       markup += `</ul>`;
       results.innerHTML = markup;
-
-      const links = Array.from(document.querySelectorAll(`li a`));
-      links.forEach(link => {
-        link.addEventListener(`click`, displayPost);
-      });
-    }
-
-    function displayPost(e) {
-      e.preventDefault();
-      const postId = this.dataset.id;
-      const post = posts.filter(post => post.id == postId)[0];
-
-      const markup = `
-        <article>
-          <h1>${post.title.rendered}</h1>
-          <div>${post.content.rendered}</div>
-        </article>
-      `;
-      results.innerHTML = markup;
-      displayBackButton();
-    }
-
-    function displayBackButton() {
-      const markup = `<p id="back"><a href="#">Back to all posts</a></p>`;
-      results.insertAdjacentHTML(`afterbegin`, markup);
-
-      const backLink = document.querySelector(`#back a`);
-      backLink.addEventListener(`click`, displayPosts);
     }
   </script>
 </html>

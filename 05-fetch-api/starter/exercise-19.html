@@ -39,10 +39,6 @@
       const rateContainer = document.querySelector(`.rate`);
       const rate = parseFloat(this.value).toFixed(2);
       rateContainer.innerHTML = rate;
-
-      const currencyContainer = document.querySelector(`.currency`);
-      const currency = document.querySelector(`option[value="${this.value}"]`);
-      currencyContainer.innerHTML = currency.innerText;
     }
 
     function getRates(base) {

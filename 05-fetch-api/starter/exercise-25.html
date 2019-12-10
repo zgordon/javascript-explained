@@ -19,7 +19,7 @@
   </body>
   <script>
     const apiURL = `https://wordsapiv1.p.rapidapi.com/words`;
-    const apiKey = `e469307d08mshf0694906f9a4e9fp1e7822jsn4092bb67f84a`;
+    const apiKey = ``;
 
     const form = document.querySelector(`#word-search`);
     const results = document.querySelector(`#results`);
@@ -45,21 +45,10 @@
         })
         .then(data => {
           console.log(data);
-          displayDefinitions(data.results);
         })
         .catch(error => {
           console.error(error);
         });
-    }
-
-    function displayDefinitions(definitions) {
-      let markup = `<ul>`;
-      definitions.forEach(def => {
-        markup += `<li>(${def.partOfSpeech}) ${def.definition}</li>`;
-      });
-      markup += `</ul>`;
-
-      results.innerHTML = markup;
     }
   </script>
 </html>

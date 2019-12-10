@@ -19,7 +19,7 @@
   </body>
   <script>
     const apiURL = `https://wordsapiv1.p.rapidapi.com/words`;
-    const apiKey = `e469307d08mshf0694906f9a4e9fp1e7822jsn4092bb67f84a`;
+    const apiKey = ``;
 
     const form = document.querySelector(`#word-search`);
     const results = document.querySelector(`#results`);
@@ -38,9 +38,6 @@
         }
       })
         .then(res => {
-          if (res.status === 404) {
-            results.innerHTML = `<p>Word not found!</p>`;
-          }
           return res.json();
         })
         .then(data => {

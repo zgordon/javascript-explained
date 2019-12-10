@@ -21,9 +21,9 @@
     </div>
   </body>
   <script>
-    const button = document.querySelector(`#load-photo`)
+    const button = ``
     function init() {
-      button.addEventListener(`click`, handleButton)
+      
     }
     init();
 
@@ -50,8 +50,7 @@
     function loadSpinner() {
       const spinner = `../assets/loader.svg`;      
       const img = `<img src="${spinner}" id="spinner" alt="Loading spinner image" />`;
-      button.disabled = true
-      button.insertAdjacentHTML(`afterbegin`, img);
+      
     }
 
     function removeButton() {
