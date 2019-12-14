@@ -1,0 +1,12 @@
+#site-header {
+  background: #dcccff;
+  padding: 1rem;
+  font-size: 3rem;
+  text-align: center;
+}
+
+#site-header a {
+  color: #222;
+  text-decoration: none;
+  text-transform: uppercase;
+}

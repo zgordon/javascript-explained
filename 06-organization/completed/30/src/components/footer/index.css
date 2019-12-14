@@ -1,0 +1,10 @@
+#site-footer {
+  background: #f8f991;
+  bottom: 0;
+  height: 2rem;
+  font-size: 1rem;
+  position: absolute;
+  padding: 0.5rem;
+  text-align: center;
+  width: calc(100% - 1rem);
+}
