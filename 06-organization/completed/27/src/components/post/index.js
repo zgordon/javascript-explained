@@ -1,5 +1,4 @@
 import data from "../../data";
-import config from "../../config";
 
 export default function Post(id) {
   const post = data.find(post => id == post.id);
