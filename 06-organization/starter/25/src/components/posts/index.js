@@ -26,7 +26,7 @@ function showPost(e) {
   Post(this.dataset.id);
 }
 
-function clearPosts() {
+export function clearPosts() {
   const posts = document.querySelector(`#posts`);
   if (posts) posts.parentElement.removeChild(posts);
 }

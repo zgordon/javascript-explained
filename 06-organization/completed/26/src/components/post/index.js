@@ -1,7 +1,7 @@
 import data from "../../data";
+import config from "../../config";
 
 export default function Post(id) {
-  const container = document.querySelector(`#app`);
   const post = data.find(post => id == post.id);
 
   let markup = `<article id="post">`;
@@ -9,7 +9,7 @@ export default function Post(id) {
   markup += `<div>${post.content}</div>`;
   markup += `</article>`;
 
-  container.insertAdjacentHTML(`beforeend`, markup);
+  config.container.insertAdjacentHTML(`beforeend`, markup);
 }
 
 export function clearPost() {

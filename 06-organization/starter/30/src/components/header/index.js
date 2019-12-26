@@ -2,6 +2,8 @@ import config from "../../config";
 import { clearPost } from "../post";
 import Posts, { clearPosts } from "../posts";
 
+import "./index.css";
+
 export default function Header() {
   const markup = `
     <header id="site-header">

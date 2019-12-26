@@ -1,11 +1,11 @@
 {
-  "name": "01",
+  "name": "17-code-organization",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
-    "dev": "parcel src/index.js",
-    "build": "parcel build src/index.js"
+    "start": "parcel index.html",
+    "build": "parcel build index.html --public-url='./'"
   },
   "keywords": [],
   "author": "",

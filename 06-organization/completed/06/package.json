@@ -1,10 +1,10 @@
 {
-  "name": "01",
+  "name": "06-code-organization",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel src/index.js",
+    "dev": "parcel src/index.js",
     "build": "parcel build src/index.js"
   },
   "keywords": [],

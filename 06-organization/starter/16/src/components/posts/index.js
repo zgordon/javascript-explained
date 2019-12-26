@@ -1,10 +1,11 @@
-function Post(postId) {
-  console.log(postId);
-  let markup = `<article id="post">`;
-  markup += `<h1>${post.title}</h1>`;
-  markup += `<div>${post.content}</div>`;
-  markup += `</article>`;
+function Posts(posts) {
+  let markup = `<ul id="posts">`;
+  posts.forEach(
+    post =>
+      (markup += `<li><a data-id="${post.id}" href="#">${post.title}</a></li>`)
+  );
+  markup += `</ul>`;
   return markup;
 }
 
-export default Post;
+export default Posts;

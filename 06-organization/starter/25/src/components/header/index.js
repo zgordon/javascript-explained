@@ -1,5 +1,5 @@
 import config from "../../config";
-import Posts from "../posts";
+import Posts, { clearPosts } from "../posts";
 
 export default function Header() {
   const markup = `
@@ -19,5 +19,6 @@ export function initHeader() {
 
 function goHome(e) {
   e.preventDefault();
+  clearPosts();
   Posts();
 }

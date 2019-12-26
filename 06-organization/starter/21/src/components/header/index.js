@@ -1,9 +1,7 @@
 import config from "../../config";
 
-export default function Header() {
-  return `
-    <header id="site-header">
-      <p>${config.name}</p>
-    </header>
-  `;
+function Header() {
+  return `<h1>${config.name}</h1>`;
 }
+
+export default Header;

@@ -1,3 +1,5 @@
+import Post from "../post";
+
 function Posts(posts) {
   let markup = `<ul id="posts">`;
   posts.forEach(
@@ -15,6 +17,7 @@ export function initPosts() {
 
 function showPost(e) {
   e.preventDefault();
+  Post(this.dataset.id);
 }
 
 export default Posts;

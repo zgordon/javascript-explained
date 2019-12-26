@@ -1,6 +1,7 @@
 function Posts(posts) {
-  let markup = ``;
-  posts.forEach(post => (markup += `${post.title}`));
+  let markup = `<ul id="posts">`;
+  posts.forEach(post => (markup += `<li>${post.title}</li>`));
+  markup += `</ul>`;
   return markup;
 }
 

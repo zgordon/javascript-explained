@@ -15,12 +15,7 @@ export function initPosts() {
 
 function showPost(e) {
   e.preventDefault();
-  clearPosts();
   console.log(this.dataset.id);
 }
 
-function clearPosts() {
-  const posts = document.querySelector(`#posts`);
-  posts.parentElement.removeChild(posts);
-}
 export default Posts;

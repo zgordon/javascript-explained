@@ -6,6 +6,8 @@ export default function Header() {
       <p><a href="#">${config.name}</a></p>
     </header>
   `;
+  config.container.insertAdjacentHTML(`afterbegin`, markup);
+  initHeader();
 }
 
 export function initHeader() {

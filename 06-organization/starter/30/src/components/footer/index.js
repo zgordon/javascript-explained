@@ -1,5 +1,7 @@
 import config from "../../config";
 
+import "./index.css";
+
 export default function Footer() {
   const today = new Date();
   const year = today.getFullYear();
