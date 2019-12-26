@@ -238,6 +238,20 @@ parcelRequire = function (modules, cache, entry, globalName) {
 
   return newRequire;
 }({
+  "config.js": [function (require, module, exports) {
+    "use strict";
+
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    exports.default = void 0;
+    var config = {
+      container: document.querySelector("#app"),
+      name: "Test Site"
+    };
+    var _default = config;
+    exports.default = _default;
+  }, {}],
   "data.js": [function (require, module, exports) {
     "use strict";
 
@@ -247,39 +261,183 @@ parcelRequire = function (modules, cache, entry, globalName) {
     exports.default = void 0;
     var data = [{
       id: 1,
-      title: "Hello JavaScript"
+      title: "Hello JavaScript",
+      content: "<p>Lorem to the ipsum</p>"
     }, {
       id: 2,
-      title: "Hello Code Organization"
+      title: "Hello Code Organization",
+      content: "<p>This will show you how to organize your code.</p>"
     }, {
       id: 3,
-      title: "Hello Tooling!"
+      title: "Hello Tooling!",
+      content: "<p>Let's learn how to use tools!</p>"
     }];
     var _default = data;
     exports.default = _default;
   }, {}],
-  "config.js": [function (require, module, exports) {
+  "components/post/index.js": [function (require, module, exports) {
     "use strict";
 
     Object.defineProperty(exports, "__esModule", {
       value: true
     });
-    exports.default = void 0;
-    var config = {
-      name: "Test Site"
-    };
-    var _default = config;
-    exports.default = _default;
-  }, {}],
+    exports.default = Post;
+    exports.clearPost = clearPost;
+
+    var _data = _interopRequireDefault(require("../../data"));
+
+    function _interopRequireDefault(obj) {
+      return obj && obj.__esModule ? obj : {
+        default: obj
+      };
+    }
+
+    function Post(id) {
+      var container = document.querySelector("#app");
+
+      var post = _data.default.find(function (post) {
+        return id == post.id;
+      });
+
+      var markup = "<article id=\"post\">";
+      markup += "<h1>".concat(post.title, "</h1>");
+      markup += "<div>".concat(post.content, "</div>");
+      markup += "</article>";
+      container.insertAdjacentHTML("beforeend", markup);
+    }
+
+    function clearPost() {
+      var post = document.querySelector("#post");
+      if (post) post.parentElement.removeChild(post);
+    }
+  }, {
+    "../../data": "data.js"
+  }],
+  "components/posts/index.js": [function (require, module, exports) {
+    "use strict";
+
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    exports.default = Posts;
+    exports.initPosts = initPosts;
+    exports.clearPosts = clearPosts;
+
+    var _config = _interopRequireDefault(require("../../config"));
+
+    var _data = _interopRequireDefault(require("../../data"));
+
+    var _post = _interopRequireDefault(require("../post"));
+
+    function _interopRequireDefault(obj) {
+      return obj && obj.__esModule ? obj : {
+        default: obj
+      };
+    }
+
+    function Posts() {
+      var markup = "<ul id=\"posts\">";
+
+      _data.default.forEach(function (post) {
+        return markup += "<li><a data-id=\"".concat(post.id, "\" href=\"#\">").concat(post.title, "</a></li>");
+      });
+
+      markup += "</ul>";
+      clearPosts();
+
+      _config.default.container.insertAdjacentHTML("beforeend", markup);
+
+      initPosts();
+    }
+
+    function initPosts() {
+      var posts = document.querySelectorAll("#posts a");
+      posts.forEach(function (post) {
+        return post.addEventListener("click", showPost);
+      });
+    }
+
+    function showPost(e) {
+      e.preventDefault();
+      clearPosts();
+      (0, _post.default)(this.dataset.id);
+    }
+
+    function clearPosts() {
+      var posts = document.querySelector("#posts");
+      if (posts) posts.parentElement.removeChild(posts);
+    }
+  }, {
+    "../../config": "config.js",
+    "../../data": "data.js",
+    "../post": "components/post/index.js"
+  }],
   "components/header/index.js": [function (require, module, exports) {
     "use strict";
 
     Object.defineProperty(exports, "__esModule", {
       value: true
     });
-    exports.default = void 0;
+    exports.default = Header;
+    exports.initHeader = initHeader;
 
     var _config = _interopRequireDefault(require("../../config"));
+
+    var _post = require("../post");
+
+    var _posts = _interopRequireWildcard(require("../posts"));
+
+    function _getRequireWildcardCache() {
+      if (typeof WeakMap !== "function") return null;
+      var cache = new WeakMap();
+
+      _getRequireWildcardCache = function _getRequireWildcardCache() {
+        return cache;
+      };
+
+      return cache;
+    }
+
+    function _interopRequireWildcard(obj) {
+      if (obj && obj.__esModule) {
+        return obj;
+      }
+
+      if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
+        return {
+          default: obj
+        };
+      }
+
+      var cache = _getRequireWildcardCache();
+
+      if (cache && cache.has(obj)) {
+        return cache.get(obj);
+      }
+
+      var newObj = {};
+      var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+
+      for (var key in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, key)) {
+          var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+
+          if (desc && (desc.get || desc.set)) {
+            Object.defineProperty(newObj, key, desc);
+          } else {
+            newObj[key] = obj[key];
+          }
+        }
+      }
+
+      newObj.default = obj;
+
+      if (cache) {
+        cache.set(obj, newObj);
+      }
+
+      return newObj;
+    }
 
     function _interopRequireDefault(obj) {
       return obj && obj.__esModule ? obj : {
@@ -288,38 +446,31 @@ parcelRequire = function (modules, cache, entry, globalName) {
     }
 
     function Header() {
-      return "<h1>".concat(_config.default.name, "</h1>");
+      var markup = "\n    <header id=\"site-header\">\n      <p><a href=\"#\">".concat(_config.default.name, "</a></p>\n    </header>\n  ");
+
+      _config.default.container.insertAdjacentHTML("afterbegin", markup);
+
+      initHeader();
     }
 
-    var _default = Header;
-    exports.default = _default;
+    function initHeader() {
+      var headerLink = document.querySelector("#site-header a");
+      headerLink.addEventListener("click", goHome);
+    }
+
+    function goHome(e) {
+      e.preventDefault();
+      (0, _post.clearPost)();
+      (0, _posts.clearPosts)();
+      (0, _posts.default)();
+    }
   }, {
-    "../../config": "config.js"
+    "../../config": "config.js",
+    "../post": "components/post/index.js",
+    "../posts": "components/posts/index.js"
   }],
-  "components/posts/index.js": [function (require, module, exports) {
-    "use strict";
-
-    Object.defineProperty(exports, "__esModule", {
-      value: true
-    });
-    exports.default = void 0;
-
-    function Posts(posts) {
-      var markup = "<ul id=\"posts\">";
-      posts.forEach(function (post) {
-        return markup += "<li><a data-id=\"".concat(post.id, "\" href=\"#\">").concat(post.title, "</a></li>");
-      });
-      markup += "</ul>";
-      return markup;
-    }
-
-    var _default = Posts;
-    exports.default = _default;
-  }, {}],
   "index.js": [function (require, module, exports) {
     "use strict";
-
-    var _data = _interopRequireDefault(require("./data"));
 
     var _header = _interopRequireDefault(require("./components/header"));
 
@@ -331,16 +482,13 @@ parcelRequire = function (modules, cache, entry, globalName) {
       };
     }
 
-    var container = document.querySelector("#app");
-    var markup = (0, _header.default)();
-    markup += (0, _posts.default)(_data.default);
-    container.insertAdjacentHTML("beforeend", markup);
+    (0, _header.default)();
+    (0, _posts.default)();
   }, {
-    "./data": "data.js",
     "./components/header": "components/header/index.js",
     "./components/posts": "components/posts/index.js"
   }],
-  "../node_modules/parcel-bundler/src/builtins/hmr-runtime.js": [function (require, module, exports) {
+  "../../../../../../../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js": [function (require, module, exports) {
     var global = arguments[3];
     var OVERLAY_ID = '__parcel__error__overlay__';
     var OldModule = module.bundle.Module;
@@ -368,7 +516,7 @@ parcelRequire = function (modules, cache, entry, globalName) {
     if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
       var hostname = "" || location.hostname;
       var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-      var ws = new WebSocket(protocol + '://' + hostname + ':' + "52811" + '/');
+      var ws = new WebSocket(protocol + '://' + hostname + ':' + "50004" + '/');
 
       ws.onmessage = function (event) {
         checkedAssets = {};
@@ -545,8 +693,8 @@ parcelRequire = function (modules, cache, entry, globalName) {
       }
     }
   }, {}]
-}, {}, ["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js", "index.js"], null);
-},{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+}, {}, ["../../../../../../../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js", "index.js"], null);
+},{}],"../../../../../../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -574,7 +722,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52834" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58713" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -750,5 +898,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","dist/index.js"], null)
+},{}]},{},["../../../../../../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","dist/index.js"], null)
 //# sourceMappingURL=/dist.de44d8ea.js.map

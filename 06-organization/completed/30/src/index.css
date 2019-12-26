@@ -1,0 +1,16 @@
+body {
+  background: #ddf1ee;
+  font-size: 2rem;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #222;
+}
+
+#post,
+#posts {
+  margin: 2rem;
+}
