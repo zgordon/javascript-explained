@@ -1,0 +1,85 @@
+.profile {
+  display: block;
+  position: relative;
+  padding: 1rem 0;
+}
+
+.profile img {
+  max-width: 80px;
+  float: left;
+  margin: 0 1rem 1rem 0;
+  border-radius: 40px;
+  border: 1px solid var(--light);
+}
+
+.profile h1 {
+  font-size: 2rem;
+  margin: 1rem 0 0 0;
+}
+
+.profile p {
+  margin: 0 0 1rem 0;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+}
+.accordion section {
+  border: 1px var(--light) solid;
+  border-bottom: none;
+}
+.accordion section:last-child {
+  border-bottom: 1px var(--light) solid;
+}
+.accordion h3 {
+  padding: 1rem;
+  margin: 0;
+  font-weight: normal;
+  background-color: var(--lightest);
+}
+.accordion section.active h3 {
+  background-color: var(--light);
+  /* font-weight: bold; */
+  border-bottom: 1px var(--light) solid;
+  /* background-color: #ddd); */
+}
+.accordion h3:hover {
+  cursor: pointer;
+  background-color: var(--lighter);
+}
+.accordion .active h3:hover {
+  /* background-color: #efefef; */
+  cursor: auto;
+}
+.accordion section .content {
+  padding: 0 1rem;
+  display: none;
+}
+.accordion section.active .content {
+  display: block;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+:root {
+  --lightest: #efefef;
+  --lighter: #ddd;
+  --light: #ccc;
+}
+
+body {
+  background: var(--lightest);
+}
+
+#app {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: white;
+}
+
+
+/*# sourceMappingURL=/src.a2b27638.css.map */

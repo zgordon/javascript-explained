@@ -1,0 +1,22 @@
+{
+  "name": "accordion-project",
+  "version": "1.0.0",
+  "description": "An accordion project using the Github API",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --public-url='./'"
+  },
+  "author": "Your Name",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "parcel-bundler": "^1.12.4"
+  },
+  "browserslist": [
+    "last 1 Chrome version"
+  ],
+  "dependencies": {
+    "moment": "^2.24.0"
+  }
+}

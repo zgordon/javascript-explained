@@ -1,1 +1,0 @@
-{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,OACE,qBAAuB,CACvB,YACF,CAHA,KACE,kBACF","file":"src.142dc1c7.css","sourceRoot":"../src","sourcesContent":["button {\r\n  border: 1px black solid;\r\n  padding: 1rem;\r\n}\r\n"]}
