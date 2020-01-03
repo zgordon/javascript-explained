@@ -1,0 +1,21 @@
+.lightbox {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.lightbox .thumbnail {
+  width: 145px;
+  height: 145px;
+  overflow: hidden;
+  margin: 2px;
+}
+
+.lightbox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lightbox img:hover {
+  cursor: pointer;
+}

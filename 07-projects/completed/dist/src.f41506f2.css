@@ -1,0 +1,23 @@
+body {
+  font-family: sans-serif;
+}
+
+:root {
+  --lightest: #efefef;
+  --lighter: #ddd;
+  --light: #ccc;
+}
+
+body {
+  background: black;
+}
+
+#app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--light);
+}
+
+
+/*# sourceMappingURL=/src.f41506f2.css.map */

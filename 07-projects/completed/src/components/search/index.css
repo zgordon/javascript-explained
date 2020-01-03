@@ -1,0 +1,16 @@
+#search {
+  margin-bottom: 1rem;
+}
+
+#search-field {
+  width: calc(100% - 110px);
+}
+
+#submit {
+  width: 100px;
+}
+
+#search input {
+  padding: 2px;
+  font-size: 1rem;
+}
