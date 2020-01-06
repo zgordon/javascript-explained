@@ -9,4 +9,7 @@ const state = {
 const setState = (toSet, newValue) => {
   state[toSet] = newValue;
 };
+
+// Export state and setState together in one object
+// This way state is updated when setState is called
 export { state, setState };
