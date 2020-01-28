@@ -34,7 +34,7 @@
     function getTitlesMarkup(posts) {
       let markup = `<ul>`;
       posts.map(post => {
-        markup += `<li><h2><a href="/${post.slug}">${post.title}</a></li>`;
+        markup += `<li><h2><a href="/${post.slug}">${post.title}</a></h2></li>`;
       });
       markup += `</ul>`;
       return markup;
