@@ -33,7 +33,9 @@
     function displayPosts() {
       let markup = `<ul>`;
       posts.forEach(post => {
-        markup += `<li><a href="#" data-id="${post.id}">${post.title.rendered}</a></li>`;
+        markup += `<li><a href="#" data-id="${post.id}">${
+          post.title.rendered
+        }</a></li>`;
       });
       markup += `</ul>`;
       results.innerHTML = markup;
@@ -42,6 +44,21 @@
       links.forEach(link => {
         link.addEventListener(`click`, displayPost);
       });
+    }
+
+    function displayPost() {
+      const postId = this.dataset.id;
+      const post = posts.filter(post => Number(postId) === post.id)[0];
+
+      const markup = `
+      <article data-id="${post.id}">
+        <h1>${post.title.rendered}</h1>
+        <div>${post.content.rendered}</div>
+      </article>
+      `;
+      results.innerHTML = markup;
+
+      displayBackButton();
     }
 
     function displayBackButton() {
