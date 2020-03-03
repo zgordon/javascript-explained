@@ -2,7 +2,7 @@
 
 The repo for the book [JavaScript Explained](https://javascriptexplained.com) from Zac Gordon.
 
-This book aims to teach beginners to JavaScript an effecient and easy to learn way to get up and running far and quickly with JavaScript.
+This book aims to teach beginners to JavaScript an efficient and easy to learn way to get up and running far and quickly with JavaScript.
 
 ## Exercises
 
