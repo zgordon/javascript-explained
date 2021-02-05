@@ -1,7 +1,6 @@
 {
   "name": "13-code-organization",
   "version": "1.0.0",
-  "description": "",
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html",
@@ -12,5 +11,6 @@
   "license": "ISC",
   "devDependencies": {
     "parcel-bundler": "^1.12.4"
-  }
+  },
+  "description": ""
 }
