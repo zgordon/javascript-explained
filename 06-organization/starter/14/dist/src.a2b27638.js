@@ -117,26 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"src/data.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var data = [{
-  id: 1,
-  title: "Hello JavaScript"
-}, {
-  id: 2,
-  title: "Hello Code Organization"
-}, {
-  id: 3,
-  title: "Hello Tooling!"
-}];
-var _default = data;
-exports.default = _default;
-},{}],"src/config.js":[function(require,module,exports) {
+})({"src/config.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -166,13 +147,36 @@ function Header() {
 
 var _default = Header;
 exports.default = _default;
-},{"../../config":"src/config.js"}],"src/components/posts/index.js":[function(require,module,exports) {
+},{"../../config":"src/config.js"}],"src/data.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var data = [{
+  title: "Of Mice and Men",
+  description: "The best selling about two friends struggling to make ends meet."
+}, {
+  title: "Grapes of Wrath",
+  description: "The something of a something describes something here."
+}, {
+  title: "Harry Potter and the Order of the Phoenix",
+  description: "A book about a magical wizard discovering how he fits in a messed up family"
+}];
+var _default = data;
+exports.default = _default;
+},{}],"src/components/posts/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _data = _interopRequireDefault(require("../../data.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Posts(posts) {
   var markup = "<ul>";
@@ -185,10 +189,8 @@ function Posts(posts) {
 
 var _default = Posts;
 exports.default = _default;
-},{}],"src/index.js":[function(require,module,exports) {
+},{"../../data.js":"src/data.js"}],"src/index.js":[function(require,module,exports) {
 "use strict";
-
-var _data = _interopRequireDefault(require("./data"));
 
 var _header = _interopRequireDefault(require("./components/header"));
 
@@ -198,9 +200,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var container = document.querySelector("#app");
 var markup = (0, _header.default)();
-markup += (0, _posts.default)(_data.default);
+markup += (0, _posts.default)();
 container.insertAdjacentHTML("beforeend", markup);
-},{"./data":"src/data.js","./components/header":"src/components/header/index.js","./components/posts":"src/components/posts/index.js"}],"../../../../../../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./components/header":"src/components/header/index.js","./components/posts":"src/components/posts/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -228,7 +230,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51907" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41783" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -404,5 +406,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../../../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","src/index.js"], null)
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","src/index.js"], null)
 //# sourceMappingURL=/src.a2b27638.js.map

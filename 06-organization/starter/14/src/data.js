@@ -1,4 +1,4 @@
-const posts = [
+const data = [
     {
         title: "Of Mice and Men",
         description: "The best selling about two friends struggling to make ends meet."
@@ -14,4 +14,4 @@ const posts = [
 ];
 
 
-export default posts;
+export default data;
